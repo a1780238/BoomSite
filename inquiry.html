@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BoomSite | Inquiry Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #FFFFFF;
+      color: #212529;
+      padding: 2rem;
+      text-align: center;
+    }
+    input, textarea, select, button {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      margin: 1rem auto;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056d2;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tell Us About Your Website</h1>
+
+<form action="thank-you.html" method="GET">
+
+  <input type="hidden" name="package" id="package" value="">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="text" name="project" placeholder="Project Name (optional)">
+  
+  <select name="website-type" required>
+    <option value="">Type of Website</option>
+    <option value="Portfolio">Portfolio</option>
+    <option value="Business">Business</option>
+    <option value="Store">Online Store</option>
+    <option value="Booking">Booking/Service</option>
+    <option value="Blog">Blog</option>
+  </select>
+
+  <textarea name="style" placeholder="Describe the style you want (e.g., minimal, bold, clean)"></textarea>
+
+  <button type="submit">Submit Inquiry</button>
+
+</form>
+
+<script>
+window.onload = function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedPackage = urlParams.get('package');
+  if (selectedPackage) {
+    document.getElementById('package').value = selectedPackage;
+  }
+}
+</script>
+
+</body>
+</html>
